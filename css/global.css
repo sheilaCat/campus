@@ -1,0 +1,193 @@
+/*_________全局css____________*/
+ul{ list-style-type:none; padding:0; margin:0}
+a:link{ text-decoration:none}
+
+
+
+/*_________全局css____________*/
+.ui-content {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	min-height: inherit
+}
+.zw_list {
+	padding: 0.3em;
+	margin: 0 !important;
+	background: #fff;
+	border-radius: 0
+}
+/*下拉刷新 style*/
+.wrapper {
+	position: absolute;
+	z-index: 100;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	background: #fff;
+	overflow: auto;
+	-webkit-user-select: none;
+	-webkit-text-size-adjust: none;
+}
+.scroller {
+	position: relative;
+	width: 100%;
+	background: #fff;
+	padding: 0;
+	margin: 0;
+}
+.scrollerDetails {
+	background: #fff;
+	position: relative;
+	padding: 0 10px;
+	margin: 0;
+}
+/* 下拉样式 Pull down styles*/
+/* 下拉样式 Pull down styles*/
+#pullDown, #pullUp, #pullDown_zw01, #pullUp_zw01, #pullDown_zw02, #pullUp_zw02, #pullDown_zw03, #pullUp_zw03, #pullDown_zw04, #pullUp_zw04 {
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+	font-size: 14px;
+	color: #888;
+	background: #fff;
+}
+/*#pullUp {padding:15px 10px 0px 0px;}*/
+#pullDown_zw01 .pullDownIcon, #pullUp_zw01 .pullUpIcon, #pullDown_zw02 .pullDownIcon, #pullUp_zw02 .pullUpIcon, #pullDown_zw03 .pullDownIcon, #pullUp_zw03 .pullUpIcon, #pullDown_zw04 .pullDownIcon, #pullUp_zw04 .pullUpIcon {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+	background: url(frame/scrollbar/pull-icon@2x.png) 0 0 no-repeat;
+	-webkit-background-size: 40px 80px;
+	background-size: 40px 80px;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 250ms;
+}
+#pullDown_zw01 .pullDownIcon, #pullDown_zw02 .pullDownIcon, #pullDown_zw03 .pullDownIcon, #pullDown_zw04 .pullDownIcon {
+	-webkit-transform: rotate(0deg) translateZ(0);
+}
+#pullUp_zw01 .pullUpIcon, #pullUp_zw02 .pullUpIcon, #pullUp_zw03 .pullUpIcon, #pullUp_zw04 .pullUpIcon {
+	-webkit-transform: rotate(-180deg) translateZ(0);
+}
+#pullDown_zw01.flip .pullDownIcon, #pullDown_zw02.flip .pullDownIcon, #pullDown_zw03.flip .pullDownIcon, #pullDown_zw04.flip .pullDownIcon {
+	-webkit-transform: rotate(-180deg) translateZ(0);
+}
+#pullUp_zw01.flip .pullUpIcon, #pullUp_zw02.flip .pullUpIcon, #pullUp_zw03.flip .pullUpIcon, #pullUp_zw04.flip .pullUpIcon {
+	-webkit-transform: rotate(0deg) translateZ(0);
+}
+#pullDown_zw01.loading .pullDownIcon, #pullUp_zw01.loading .pullUpIcon, #pullDown_zw02.loading .pullDownIcon, #pullUp_zw02.loading .pullUpIcon, #pullDown_zw03.loading .pullDownIcon, #pullUp_zw03.loading .pullUpIcon, #pullDown_zw04.loading .pullDownIcon, #pullUp_zw04.loading .pullUpIcon {
+	background-position: 0 100%;
+	-webkit-transform: rotate(0deg) translateZ(0);
+	-webkit-transition-duration: 0ms;
+	-webkit-animation-name: loading;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes loading {
+from {
+-webkit-transform:rotate(0deg) translateZ(0);
+}
+to {
+	-webkit-transform: rotate(360deg) translateZ(0);
+}
+}
+/*红色滚动条——————————————————————*/
+/**
+ *
+ * Horizontal Scrollbar
+ *
+ */
+.myScrollbarH {
+	position: absolute;
+	z-index: 100;
+	height: 8px;
+	bottom: 1px;
+	left: 2px;
+	right: 7px
+}
+.myScrollbarH > div {
+	position: absolute;
+	z-index: 100;
+	height: 100%;
+	/* The following is probably what you want to customize */
+	background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#a00), to(#f00));
+	background-image: -moz-linear-gradient(top, #f00, #900);
+	background-image: -o-linear-gradient(top, #f00, #900);
+	border: 1px solid #900;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	-o-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+	-moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+	-o-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+	box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+}
+/**
+ *
+ * Vertical Scrollbar
+ *
+ */
+.myScrollbarV {
+	position: absolute;
+	z-index: 100;
+	width: 8px;
+	bottom: 7px;
+	top: 2px;
+	right: 1px
+}
+.myScrollbarV > div {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	/* The following is probably what you want to customize */
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#f00), to(#900));
+	background-image: -moz-linear-gradient(top, #f00, #900);
+	background-image: -o-linear-gradient(top, #f00, #900);
+	border: 1px solid #900;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	-o-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+	-moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+	-o-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+	box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5);
+}
+/*内容页面css-------------------*/
+.video {
+	width: 100% !important;
+	height: auto !important
+}
+.detailsTop {
+	border-bottom: 3px solid #666;
+	padding: 20px 0 5px 0;
+}
+.detailsData {
+	color: #888
+}
+section p {
+	font-size: 18px !important;
+	font-family: "微软雅黑", "黑体", "仿宋", Arial
+}
+.detailsImg img{ max-width:100%}

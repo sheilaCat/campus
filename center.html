@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>校园掌上通</title>
+<link rel="stylesheet" href="css/theme.css">
+<!-- <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.2.min.css"> -->
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css">
+<link rel="stylesheet" href="css/JPictureRotary.css" />
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/custom-icons.css">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/JPictureRotary.js"></script>
+
+</head>
+
+<body> 
+<div data-role="page" id="classify"> 
+  <div data-role="header" data-position="fixed" data-tap-toggle="false" >
+    <div class="ui-grid-b">
+      <div class="ui-block-a"> <a href="#leftpane0" data-role="button" data-iconpos="notext" data-icon = "custom-slide" data-transition="slide">菜单</a>
+      </div>
+      <!-- /ui-block-a -->
+      <!-- 自定义ICON data-icon = "custom-xxx" -->
+      <!--<a href="#mypanel" class="ui-btn-left" data-icon="bars">&nbsp;</a>--> 
+      <!--<h1>校园掌上通</h1>-->
+      <div class="ui-block-b"><a data-role="button" data-icon="false"><text>个人中心</text></a>
+      </div>
+      <!-- /ui-block-b -->
+      
+  </div>
+  <!-- /ui-grid-b -->
+  </div>
+  <!-- /header -->
+<div role="main" class="ui-content"> 
+<!-- <img src="images/classifybg.png"> -->
+<div class="ui-grid-b ui-responsive" id = "center-display">
+  <p>账号：1234423</p>
+  <p>积分：12</p>
+  <p>等级：1</p>
+  <div id = "threeIcons">
+    <div class="ui-block-a"><a href="#"  data-role="button" data-icon="custom-three1" onClick="">待付款</a></div>
+    <div class="ui-block-b"><a href="#"  data-role="button" data-icon="custom-three2" onClick="">待发货</a></div>
+    <div class="ui-block-c"><a href="#"  data-role="button" data-icon="custom-three3" onClick="">全部订单</a></div>
+  </div>
+  <div id = "list">
+    <div class="ui-block-a"><a href="#"  data-role="button" onClick="">我的收藏</a></div>
+    <div class="ui-block-a"><a href="#"  data-role="button" onClick="">我的支付宝</a></div>
+    <div class="ui-block-a"><a href="#"  data-role="button" onClick="">我的积分记录</a></div>
+     <div class="ui-block-a"><a href="#"  data-role="button" onClick="">个人资料修改</a></div>
+    <div class="ui-block-a"><a href="#"  data-role="button" onClick="">默认收货地址管理</a></div>
+  </div>
+
+</div>
+<!-- /class-nav -->
+</div>
+<!-- /main -->
+
+   <div data-role="panel" id="leftpane0" data-position="left" data-display="push" >
+    <center>
+      <a href="#popupHeader" data-rel="popup" data-position-to="window" data-transition="fade"> <img class="popphoto" src="images/album.png" alt="head" style="width:100%;height:100%"> </a>
+      <div data-role="popup" id="popupHeader" data-overlay-theme="b" data-theme="b" data-corners="false"> <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"> Close </a> <img class="popphoto" src="images/album.png"  style="max-height:512px;" alt="head"> </div>
+      <!-- popup -->
+      
+      <p>感觉自己萌萌哒</p>
+    </center>
+    <ul data-role="listview">
+      <!--<li><a href="#" data-rel="close" class=" ui-btn ui-icon-delete ui-btn-icon-right">关闭</a></li>-->
+      <li><a href="#signin" data-rel="popup" data-position-to="window" data-icon="custom-pen" data-role="button">今日签到</a></li>
+      <li><a href="#" data-icon="custom-mail" data-role="button">系统消息</a></li>
+      <li><a href="homepage.html" data-icon="custom-star" data-role="button">我的主页</a></li>
+      <li><a href="center.html" data-icon="custom-user" data-role="button">个人中心</a></li>
+      <li><a href="#" data-icon="custom-like" data-role="button">分享应用</a></li>
+      <li><a href="about.html" data-icon="custom-eye" data-role="button">关于掌上通</a></li>
+    </ul>
+  </div>
+  <!-- /panel --> 
+      <div data-role="popup" id="signin" >
+        <p>签到奖励</p>
+        <p>今日您可以领取<span><img src="images/coin.png">50积分</span></p>
+        <p>分享可额外获得一次奖励</p>
+        <button>分享</button>
+        <button>确定</button>
+    </div>   
+</div>
+<!-- /page -->
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>校园掌上通</title>
+<link rel="stylesheet" href="css/theme.css">
+<!-- <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.2.min.css"> -->
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css">
+<link rel="stylesheet" href="css/JPictureRotary.css" />
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/custom-icons.css">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/JPictureRotary.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/cordova.js"></script>
+<script type="text/javascript" src="js/jsbase64.js"></script>
+</head>
+
+<body>
+<div data-role="page" id="foo"> 
+  <script type="text/javascript">
+
+		
+	var xmlhttp;
+	function loadXMLDoc(url)
+	{
+		xmlhttp=null;
+		if (window.XMLHttpRequest)
+		{// code for all new browsers
+			xmlhttp=new XMLHttpRequest();
+		}
+		else if (window.ActiveXObject)
+	  	{// code for IE5 and IE6
+	  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  	}
+		if (xmlhttp!=null)
+	  	{
+	  		xmlhttp.onreadystatechange=state_Change;
+	  		xmlhttp.open("GET",url,true);
+	  		alert("xmlhttp.open");
+	  		var sen = "username=root1&password=rootroot";
+	  		xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=urt-8");
+	  		var cookieName = "root1:rootroot";
+	  		var base64 = BASE64.encoder(cookieName);
+	  		//xmlhttp.setRequestHeader("Authorization", "Basic 1")
+	  		xmlhttp.setRequestHeader("Authorization", "Basic "+base64)
+	  		alert("base64="+base64);
+	  		//xmlhttp.send("username=root1&password=rootroot");
+	  		xmlhttp.send(sen);
+	  		//xmlhttp.send(null);
+	  		alert("xmlhttp.send");
+	  	}
+		else
+	  	{
+	  		alert("Your browser does not support XMLHTTP.");
+	  	}
+	}
+
+	function state_Change()
+	{
+		alert("xmlhttp.readyState="+xmlhttp.readyState);
+		if (xmlhttp.readyState==4)
+	  	{// 4 = "loaded"
+	  		if (xmlhttp.status==200)
+	    	{// 200 = OK
+	    		// ...our code here...
+				alert("成功了啊");
+				alert(xmlhttp.responseText);
+	    	}
+	  		else
+	    	{
+	    		alert("Problem retrieving XML data");
+				alert("xmlhttp.status="+xmlhttp.status);
+				alert(xmlhttp.responseText);
+	    	}
+	  	}
+	}
+	
+	
+	 var myScroll, pullDownEl, pullDownOffset, pullUpEl, pullUpOffset, generatedCount = 0;
+
+    //下拉刷新 
+    // myScroll.refresh();		
+	// 数据加载完成后，调用界面更新方法
+    function pullDownAction_zw02() {
+        setTimeout(function() {
+            var content = ""
+            for (var i = 1; i < 3; i++) {
+                content = content + "<li data-icon=\"false\">";
+                content = content + "<a href=\"#\" >";
+                content = content + "<h2>下拉刷新内容</h2>";
+                content = content + "<p>";
+                content = content + "日期：" + new Date();
+                content = content + "</p>";
+				content = content + "<span class=\"ui-li-count\">";
+				content = content + "￥12";
+				content = content + "</span>";
+                content = content + "</a>";
+                content = content + "</li>";
+            }
+            $("#goodsList").prepend(content).listview('refresh');
+			window.plugins.SimplePlugin.test("test",function(result) {	//成功时执行，传入的是Javascript中对象方法的参数
+			//output.innerHTML = result;//把输入框的的内容的内容显示在输出div上
+			alert("回调成功");
+            }, function(err) {						//错误时执行
+                // failure callback
+                //output.innerHTML = 'err: ' + err  + ', Failed to invoke simple plugin';
+				alert("为嘛会失败呢？");
+            });
+            myScroll.refresh(); //数据加载完成后，调用界面更新方法
+        },1000);}
+
+    // 上拉刷新
+    // myScroll.refresh();		// 数据加载完成后，调用界面更新方法
+    function pullUpAction_zw02() {
+        setTimeout(function() { // <-- Simulate network congestion, remove setTimeout from production!
+			
+			
+            var content = ""
+            for (var i = 1; i < 2; i++) {
+                content = content + "<li data-icon=\"false\">";
+                content = content + "<a href=\"#\">";
+                content = content + "<h2>上拉内容上拉内容</h2>";
+                content = content + "<p>";
+                content = content + "日期：" + new Date();
+                content = content + "</p>";
+				content = content + "<span class=\"ui-li-count\">";
+				content = content + "￥12";
+				content = content + "</span>";
+                content = content + "</a>";
+                content = content + "</li>";
+            }
+            $("#goodsList").append(content).listview('refresh');
+            myScroll.refresh(); // 数据加载完成后，调用界面更新方法
+        },1000);}
+
+    // 初始化iScroll控件
+    function loaded_zw02() {
+        if (myScroll != null) {
+            myScroll.destroy();
+        }
+        pullDownEl = document.getElementById('pullDown');
+        pullDownOffset = pullDownEl.offsetHeight;
+        pullUpEl = document.getElementById('pullUp');
+        pullUpOffset = pullUpEl.offsetHeight;
+
+        myScroll = new iScroll('wrapperContent', {
+            // 重要样式
+            useTransition: false,
+			checkDOMChange: false,
+				scrollbarClass: 'myScrollbar',
+				hScrollbar: false,		// 隐藏滚动条
+				vScrollbar: false,
+				
+            topOffset: pullDownOffset,
+            onRefresh: function() {
+                if (pullDownEl.className.match('loading')) {
+                    pullDownEl.className = '';
+                    pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+                } else if (pullUpEl.className.match('loading')) {
+                    pullUpEl.className = '';
+                    pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+                }
+            },
+            onScrollMove: function() {
+                if (this.y > 5 && !pullDownEl.className.match('flip')) {
+                    pullDownEl.className = 'flip';
+                    pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+                    this.minScrollY = 0;
+                } else if (this.y < 5 && pullDownEl.className.match('flip')) {
+                    pullDownEl.className = '';
+                    pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+                    this.minScrollY = -pullDownOffset;
+                } else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+                    pullUpEl.className = 'flip';
+                    pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+                    this.maxScrollY = this.maxScrollY;
+                } else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+                    pullUpEl.className = '';
+                    pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+                    this.maxScrollY = pullUpOffset;
+                }
+            },
+            onScrollEnd: function() {
+                if (pullDownEl.className.match('flip')) {
+                    pullDownEl.className = 'loading';
+                    pullDownEl.querySelector('.pullDownLabel').innerHTML = '加载中...';
+                    pullDownAction_zw02(); // Execute custom function (ajax call?)
+                } else if (pullUpEl.className.match('flip')) {
+                    pullUpEl.className = 'loading';
+                    pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';
+                    pullUpAction_zw02(); // Execute custom function (ajax call?)
+                }
+            }
+        });
+
+        setTimeout(function() {
+            document.getElementById('wrapperContent').style.left = '0';
+        },0);
+    }
+
+    //初始化绑定iScroll控件 
+    //$("#foo").live('pageinit',function() {
+    //    var content = ""
+    //    $("#goodsList").append(content).listview('refresh');
+    //});
+	
+	
+	
+	
+	
+	//页面加载完执行代码-------------------------
+	$("#foo").on("pageinit",function() {
+		//轮播代码调用-------------------------
+		$("#pictureContainer").JPictureRotary({
+			animationSpeed: "slow",
+			delay: 3,
+		});
+		var content = ""
+		$("#goodsList").append(content).listview('refresh');
+		
+		
+		
+		
+		//loadXMLDoc("http://10.10.3.106:8080/campus-server-v2/mobile/login");
+		
+		
+		
+	});
+	
+	
+	//页面二即将显示执行代码-------------------------
+	$("#foo").live("pagebeforeshow", function(){
+		setTimeout(loaded_zw02, 200);
+		setTimeout(function() {myScroll.refresh()}, 1000);
+		//setTimeout(myScroll.refresh(), 800);
+	});
+	//页面二显示时执行代码-------------------------
+	$("#foo").on("pageshow",function() {
+		
+	});
+
+</script>
+ 
+  <div data-role="header" data-position="fixed" data-tap-toggle="false" >
+    <div class="ui-grid-b">
+      <div class="ui-block-a"> <a href="#leftpane0" data-role="button" data-iconpos="notext" data-icon = "custom-slide" data-transition="slide">菜单</a> </div>
+      <!-- /ui-block-a --> 
+      <!-- 自定义ICON data-icon = "custom-xxx" -->
+      <!--<a href="#mypanel" class="ui-btn-left" data-icon="bars">&nbsp;</a>--> 
+      <!--<h1>校园掌上通</h1>-->
+      <div class="ui-block-b"> <a data-role="button" data-icon="false"><text>校园掌上通&nbsp;</text></a> </div>
+      <!-- /ui-block-b -->
+    </div>
+    <!-- /ui-grid-b -->
+    <div data-role="popup" id="popupNested" data-theme="none">
+      <div data-role="controlgroup" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+        <form>
+          <fieldset data-role="controlgroup">
+            <legend>选择类型</legend>
+            <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked">
+            <label for="radio-choice-v-2a">所有人的</label>
+            <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="off">
+            <label for="radio-choice-v-2b">同学校的</label>
+            <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2c" value="other">
+            <label for="radio-choice-v-2c">我关注的</label>
+          </fieldset>
+        </form>
+      </div>
+      <!-- /collapsible set --> 
+    </div>
+    <!-- /popup --> 
+    
+  </div>
+  <!-- /header -->
+  
+  <div role="main" class="ui-content"> 
+    
+    <!--<div id="wrapper">-->
+    
+    <div id="wrapperContent" class="wrapper">
+      <div id="scrollerContent" class="scroller">
+        <div id="pullDown"> <span class="ui-icon-arrow-d"></span><span class="pullDownLabel">下拉刷新...</span> </div>
+        <ul id="pictureContainer">
+          <li><img src="images/img1.jpg" /></li>
+          <li><img src="images/img2.jpg" /></li>
+          <li><img src="images/img3.jpg" /></li>
+        </ul>
+        <!--<div id="scroller">-->
+        
+        <ul id="goodsList" data-role="listview" data-inset="true" data-split-icon="gear" data-split-theme="a" class="zw_list">
+          <li data-icon="false" style="background-image: url('images/img2.jpg');"> <a href="#"> 
+            <h2>咖啡</h2>
+            <p>这里卖咖啡</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#"> 
+            <h2>师兄芋圆</h2>
+            <p>这里当然卖芋圆</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#"> 
+            <h2>咖啡</h2>
+            <p>哦哦还是咖啡</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#">
+            <h2>第四条</h2>
+            <p>详细</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#">
+            <h2>第五条</h2>
+            <p>详细</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#">
+            <h2>第六条</h2>
+            <p>详细</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#">
+            <h2>第七条</h2>
+            <p>详细</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#">
+            <h2>第八条</h2>
+            <p>详细</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#">
+            <h2>第九条</h2>
+            <p>详细</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+          <li data-icon="false"> <a href="#">
+            <h2>第十条</h2>
+            <p>详细</p>
+            <span class="ui-li-count">￥12</span> </a> </li>
+        </ul>
+        <!--</div>--> 
+        <!-- scroller --> 
+        <!--</div>--> 
+        <!-- wrapper -->
+        <div id="pullUp"> <span class="ui-icon-arrow-u"></span><span class="pullUpLabel">上拉加载更多...</span> </div>
+      </div>
+      <!-- scrollerContent --> 
+    </div>
+    <!-- wrapperContent --> 
+  </div>
+  <!-- main -->
+  
+  <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li> <a href="#" data-prefetch="true" data-transition="none" class="ui-btn-active ui-state-persist" data-icon="custom-mainDown"> 首页 </a> </li>
+        <li> <a href="square.html" data-icon="custom-squareUp" rel="external"> 广场 </a> </li>
+        <li> <a href="classify.html" data-icon="custom-sortUp" rel="external"> 分类 </a> </li>
+        <li> <a href="more.html" data-icon="custom-moreUp" rel="external"> 更多 </a> </li>
+      </ul>
+    </div>
+    <!-- /navbar --> 
+  </div>
+  <!-- /footer -->
+
+  <div data-role="panel" id="leftpane0" data-position="left" data-display="push" >
+    <center>
+      <a href="#popupHeader" data-rel="popup" data-position-to="window" data-transition="fade"> <img class="popphoto" src="images/album.png" alt="Paris, France" style="width:100%;height:100%"> </a>
+      <div data-role="popup" id="popupHeader" data-overlay-theme="b" data-theme="b" data-corners="false"> <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"> Close </a> <img class="popphoto" src="images/album.png" style="max-height:512px;" alt="head"> </div>
+      <!-- popup -->
+      
+      <p>感觉自己萌萌哒</p>
+    </center>
+    <ul data-role="listview">
+      <!--<li><a href="#" data-rel="close" class=" ui-btn ui-icon-delete ui-btn-icon-right">关闭</a></li>-->
+      <li><a href="#signin" data-rel="popup" data-position-to="window" data-icon="custom-pen" data-role="button">今日签到</a></li>
+      <li><a href="systemMessage.html" data-icon="custom-mail" data-role="button" rel="external">系统消息</a></li>
+      <li><a href="homepage.html" data-icon="custom-star" data-role="button" rel="external">我的主页</a></li>
+      <li><a href="center.html" data-icon="custom-user" data-role="button" rel="external">个人中心</a></li>
+      <li><a href="#" data-icon="custom-like" data-role="button">分享应用</a></li>
+      <li><a href="about.html" data-icon="custom-eye" data-role="button" rel="external">关于掌上通</a></li>
+    </ul>
+  </div>
+  <!-- /panel --> 
+
+    <div data-role="popup" id="signin" >
+        <p>签到奖励</p>
+        <p>今日您可以领取<span><img src="images/coin.png">50积分</span></p>
+        <p>分享可额外获得一次奖励</p>
+        <button>分享</button>
+        <button>确定</button>
+    </div>   
+</div>
+<!-- /page -->
+</body>
+</html>

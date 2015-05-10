@@ -1,0 +1,259 @@
+.ui-icon-custom-slide {
+	background:url('myicon/main.png') no-repeat;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:2em,13em;
+	width:2em;
+	height:2em;
+}
+
+.ui-icon-custom-back {
+	background:url('myicon/back.png') no-repeat;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:2em,13em;
+	width:2em;
+	height:2em;
+}
+
+.ui-icon-custom-write {
+	background:url('myicon/write.png') no-repeat;
+	background-position: right;
+	background-color:transparent;
+	border:none;
+	background-size:2em,13em;
+	width:2em;
+	height:2em;
+	float: right;
+}
+
+.ui-icon-custom-mainUp {
+	background:url('myicon/mainUp.png') no-repeat 0 0;
+	background-position: center;
+	border:none;
+	background-color:transparent;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-mainDown {
+	background:url('myicon/mainDown.png') no-repeat 0 0;
+	background-position: center;
+	border:none;
+	background-color:transparent;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-squareUp{
+	background:url('myicon/squareUp.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-squareDown{
+	background:url('myicon/squareDown.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-moreUp{
+	background:url('myicon/moreUp.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-moreDown{
+	background:url('myicon/moreDown.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-sortUp{
+	background:url('myicon/sortUp.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-sortDown{
+	background:url('myicon/sortDown.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:3em,3em;
+	padding-top: 3.5em;
+}
+
+.ui-icon-custom-pen{
+	background:url('myicon/pen.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:1.5em,1.5em;
+}
+.ui-icon-custom-mail{
+	background:url('myicon/mail.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:1.5em,1.5em;
+
+}
+.ui-icon-custom-star{
+	background:url('myicon/star.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:1.5em,1.5em;
+}
+.ui-icon-custom-user{
+	background:url('myicon/user.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:1.5em,1.5em;
+}
+.ui-icon-custom-like{
+	background:url('myicon/like.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:1.5em,1.5em;
+}
+.ui-icon-custom-eye{
+	background:url('myicon/eye.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:1.5em,1.5em;
+}
+.ui-icon-custom-setting{
+	background:url('myicon/setting.png') no-repeat 0 0;
+	background-position: center;
+	background-color:transparent;
+	border:none;
+	background-size:1.5em,1.5em;
+}
+
+.ui-icon-custom-date{
+	background:url('myicon/date.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	padding-top:0;
+	padding-left: 1.5em;
+}
+.ui-icon-custom-fancy{
+	background:url('myicon/fancy.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	padding-top:0;
+	padding-left: 1.5em;
+}
+.ui-icon-custom-reply{
+	background:url('myicon/reply.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	padding-top:0;
+	padding-left: 1.5em;
+}
+
+.ui-icon-custom-eat{
+	background:url('myicon/eat.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+.ui-icon-custom-flower{
+	background:url('myicon/flower.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+.ui-icon-custom-hotel{
+	background:url('myicon/hotel.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+.ui-icon-custom-life{
+	background:url('myicon/life.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+.ui-icon-custom-movie{
+	background:url('myicon/movie.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+.ui-icon-custom-school{
+	background:url('myicon/school.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+.ui-icon-custom-sing{
+	background:url('myicon/sing.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+/* for center page
+-----------------------------------------------------------------------------------------------------------*/
+.ui-icon-custom-three1{
+	background:url('myicon/three1.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 2.5em,2.5em;
+}
+
+.ui-icon-custom-three2{
+	background:url('myicon/three2.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 4em,4em;
+}
+
+.ui-icon-custom-three3{
+	background:url('myicon/three3.png') no-repeat 0 0;
+	background-color:transparent;
+	border:none;
+	background-position: center;
+	background-size: 4em,4em;
+}
+
+

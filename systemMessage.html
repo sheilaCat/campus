@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/jquery.mobile.icons-1.4.2.min.css"> 
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css">
+<link rel="stylesheet" href="css/custom-icons.css">
+
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/cordova.js"></script>
+<script type="text/javascript" src="js/messageRefresh.js"></script>
+
+
+</head>
+
+<body>
+
+<div data-role="page" id="message">
+
+  <div data-role="header" data-position="fixed" data-tap-toggle="false" >
+    <div class="ui-grid-b">
+      <div class="ui-block-a"> <a href="#" data-rel="back" data-role="button" data-iconpos="notext" data-icon = "custom-back" data-transition="fade">返回</a> </div>
+      <!-- /ui-block-a --> 
+      <!-- 自定义ICON data-icon = "custom-xxx" -->
+      <!--<a href="#mypanel" class="ui-btn-left" data-icon="bars">&nbsp;</a>--> 
+      <!--<h1>校园掌上通</h1>-->
+      <div class="ui-block-b"> <a data-role="button" data-icon="false"><text>系统消息&nbsp;</text></a> </div>
+      <!-- /ui-block-b -->
+    </div>
+    <!-- /ui-grid-b -->
+	</div>
+	<!--/header-->
+
+
+<div data-role="content" data-position="fixed" data-tap-toggle="false" class="ui-content">
+	<div id="MwrapperContent" class="wrapper">
+		<div id="MscrollerContent" class="scroller">
+			<div id="pullDown"> <span class="ui-icon-arrow-d"></span><span class="pullDownLabel">下拉刷新...</span> </div>
+		
+				<ul id="messageList" data-role="listview" data-inset="true" data-split-icon="gear" data-split-theme="a" class="zw_list">
+					<li data-icon="false"> <a href="#"> 
+					<div class="ui-grid-b">
+						<div class="ui-block-a">
+							<h2><font color="green">[私信]</font>XXX给你留言了</h2>
+						</div>
+						
+						<div class="ui-block-c">
+							<h4><font size="1px">1小时前</font></h4>
+						</div>
+					</div>
+				
+					<textarea disabled="disabled">哈哈哈哈哈哈</textarea>
+						
+					</li></a>
+					
+					<li data-icon="false"> <a href="#"> 
+					<div class="ui-grid-b">
+						<div class="ui-block-a">
+							<h2><font color="green">[私信]</font>XXX给你留言了
+							</h2>
+						</div>
+						
+						<div class="ui-block-c">
+							<h4><font size="1px">一小时前</font></h4>
+						</div>
+					</div>
+				
+					<textarea disabled="disabled">哈哈哈哈哈</textarea>
+						
+					</li></a>
+				</ul>
+			
+		</div>
+	</div>
+</div>
+	<!--/content-->
+	
+	
+	
+	
+</div>
+
+</body>
+
+</html>
